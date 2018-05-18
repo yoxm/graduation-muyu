@@ -1,0 +1,175 @@
+﻿# Host: localhost  (Version: 5.5.40)
+# Date: 2018-05-17 12:19:08
+# Generator: MySQL-Front 5.3  (Build 4.269)
+
+/*!40101 SET NAMES utf8 */;
+
+#
+# Structure for table "advertisement"
+#
+
+CREATE TABLE `advertisement` (
+  `aid` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT NULL,
+  `pic` varchar(155) DEFAULT NULL,
+  `content` varchar(255) DEFAULT NULL,
+  `times` datetime DEFAULT NULL,
+  `power` int(11) DEFAULT NULL,
+  `links` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`aid`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+#
+# Structure for table "commodity"
+#
+
+CREATE TABLE `commodity` (
+  `gid` int(11) NOT NULL AUTO_INCREMENT COMMENT '商品id',
+  `uid` int(11) DEFAULT NULL COMMENT '发布者id',
+  `goods_name` varchar(255) DEFAULT NULL COMMENT '商品名字',
+  `price` int(11) DEFAULT NULL COMMENT '价格',
+  `conditions` int(1) DEFAULT NULL COMMENT '成色',
+  `content` varchar(2500) DEFAULT NULL COMMENT '详细描述',
+  `picture` varchar(1000) DEFAULT NULL COMMENT '存图片的url',
+  `goods_type` int(1) DEFAULT NULL COMMENT '商品的类型',
+  `page_views` int(11) DEFAULT NULL COMMENT '浏览量',
+  `release_time` datetime DEFAULT NULL COMMENT '发布时间',
+  `is_sell_out` int(1) DEFAULT NULL COMMENT '是否卖出',
+  `is_want_by` int(1) DEFAULT NULL COMMENT '是否是想买',
+  PRIMARY KEY (`gid`)
+) ENGINE=MyISAM AUTO_INCREMENT=129 DEFAULT CHARSET=utf8 COMMENT='商品';
+
+#
+# Structure for table "favorites"
+#
+
+CREATE TABLE `favorites` (
+  `uid` int(11) NOT NULL DEFAULT '0' COMMENT '用户id',
+  `gid` int(11) DEFAULT NULL COMMENT '商品id'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='收藏';
+
+#
+# Structure for table "info"
+#
+
+CREATE TABLE `info` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT COMMENT '用户id',
+  `nick_name` varchar(255) DEFAULT NULL COMMENT '昵称',
+  `real_name` varchar(255) DEFAULT NULL COMMENT '真实姓名',
+  `tel_num` char(11) DEFAULT NULL COMMENT '手机号',
+  `email` varchar(80) DEFAULT NULL COMMENT '邮箱',
+  `passwd` varchar(255) DEFAULT NULL COMMENT '密码',
+  `release_num` int(11) DEFAULT NULL COMMENT '累计发布数量',
+  `signature` varchar(100) DEFAULT NULL COMMENT '个性签名',
+  `contact` varchar(255) DEFAULT NULL COMMENT '联系方式',
+  `head_pic` varchar(255) DEFAULT NULL COMMENT '头像',
+  `qq` char(15) DEFAULT NULL COMMENT 'qq号',
+  `wechat` varchar(125) DEFAULT NULL,
+  PRIMARY KEY (`uid`)
+) ENGINE=MyISAM AUTO_INCREMENT=118 DEFAULT CHARSET=utf8 COMMENT='个人信息表';
+
+#
+# Structure for table "message"
+#
+
+CREATE TABLE `message` (
+  `mid` int(11) NOT NULL AUTO_INCREMENT COMMENT '留言id',
+  `releaser` int(11) DEFAULT NULL COMMENT '写这条留言的用户id',
+  `receiver` int(11) DEFAULT NULL COMMENT '接收留言者的id',
+  `content` varchar(1254) DEFAULT NULL COMMENT '留言内容',
+  `is_readed` int(1) DEFAULT NULL COMMENT '是否已读',
+  `gid` int(11) DEFAULT NULL COMMENT '商品id',
+  `release_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`mid`)
+) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COMMENT='留言表';
+
+#
+# Structure for table "news"
+#
+
+CREATE TABLE `news` (
+  `nid` int(11) NOT NULL AUTO_INCREMENT COMMENT '资讯id',
+  `title` varchar(255) DEFAULT NULL COMMENT '标题',
+  `content` varchar(5555) DEFAULT NULL COMMENT '资讯内容',
+  `release_time` datetime DEFAULT NULL COMMENT '发布时间',
+  `classification` int(1) DEFAULT NULL COMMENT '所属类别',
+  `is_top` int(11) DEFAULT NULL,
+  PRIMARY KEY (`nid`)
+) ENGINE=MyISAM AUTO_INCREMENT=138 DEFAULT CHARSET=utf8 COMMENT='资讯';
+
+#
+# Structure for table "news_comment"
+#
+
+CREATE TABLE `news_comment` (
+  `reply_id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) DEFAULT NULL COMMENT '评论者id',
+  `content` varchar(1255) DEFAULT NULL,
+  `release_time` datetime DEFAULT NULL,
+  `nid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`reply_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COMMENT='资讯评论表';
+
+#
+# Structure for table "notice"
+#
+
+CREATE TABLE `notice` (
+  `nid` int(11) NOT NULL DEFAULT '0' COMMENT '公告id',
+  `pic_url` varchar(255) DEFAULT NULL COMMENT '图片的url',
+  `is_show` int(1) DEFAULT NULL COMMENT '是否展示',
+  `links` varchar(255) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='公告表';
+
+#
+# Structure for table "orders"
+#
+
+CREATE TABLE `orders` (
+  `oid` int(11) NOT NULL AUTO_INCREMENT COMMENT '订单id',
+  `uid` int(11) DEFAULT NULL COMMENT '买家的id',
+  `gid` int(11) DEFAULT NULL COMMENT '商品id',
+  `buy_time` datetime DEFAULT NULL COMMENT '下单时间',
+  `status` int(11) DEFAULT NULL COMMENT '订单状态',
+  PRIMARY KEY (`oid`)
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COMMENT='订单表';
+
+#
+# Structure for table "plate"
+#
+
+CREATE TABLE `plate` (
+  `plate_id` int(11) NOT NULL AUTO_INCREMENT,
+  `plate_name` varchar(255) DEFAULT NULL COMMENT '版面名字',
+  PRIMARY KEY (`plate_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='版面';
+
+#
+# Structure for table "post"
+#
+
+CREATE TABLE `post` (
+  `pid` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) DEFAULT NULL COMMENT '作者的id',
+  `title` varchar(255) DEFAULT NULL COMMENT '标题',
+  `content` varchar(2555) DEFAULT NULL COMMENT '一楼的内容',
+  `reply_num` int(11) DEFAULT NULL COMMENT '回复数量',
+  `release_time` datetime DEFAULT NULL COMMENT '发布时间',
+  `is_top` int(1) DEFAULT NULL COMMENT '是否是置顶',
+  `plate_id` int(1) DEFAULT NULL COMMENT '板块id',
+  PRIMARY KEY (`pid`)
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COMMENT='帖子表';
+
+#
+# Structure for table "post_reply"
+#
+
+CREATE TABLE `post_reply` (
+  `rid` int(11) NOT NULL AUTO_INCREMENT,
+  `post_id` int(11) DEFAULT NULL COMMENT '帖子id',
+  `uid` int(11) DEFAULT NULL COMMENT '作者id',
+  `content` varchar(2255) DEFAULT NULL COMMENT '回复内容',
+  `release_time` datetime DEFAULT NULL COMMENT '回复时间',
+  `is_delete` int(11) DEFAULT NULL COMMENT '是否被删除',
+  PRIMARY KEY (`rid`)
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COMMENT='帖子回复表';
