@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<meta charset="utf-8">
+<title>个人设置&nbsp;-&nbsp;南风共享</title>
+<link rel="stylesheet" href="//cdn.nanfeng.hejianpeng.cn/css/my_settings.css" type="text/css"/>	
+</head>
+<body>
+	<div id="headPic">
+		<b>头像：</b>
+		<div>
+			<input id="upload" type="file" accept="image/*" />
+		</div>
+		<img id="showHeadPic" src="data:image/jpeg;base64," alt="" />
+	</div>
+	<div class="card" onClick="alert('暂时不允许修改昵称')">
+		<span>昵称：</span>
+		<input id="nickName" type="text" placeholder="请输入您的昵称" maxlength="60" readonly>
+	</div>
+	<div class="card">
+		<span>真实名字：</span>
+		<input id="realName" type="text" placeholder="请输入您的真实名字" maxlength="5" onFocus="pengge.input.check('ch',this)">
+	</div>
+	<div class="card">
+		<span>手机号码：</span>
+		<input id="telNum" type="text" onFocus="pengge.input.check('num',this)" onBlur="check_input('phone',this)" placeholder="请输入您的手机号码" maxlength="11">
+	</div>
+	<div class="card">
+		<span>邮箱地址：</span>
+		<input id="email" type="text" onBlur="check_input('email',this)" placeholder="请输入您的邮箱地址" maxlength="30">
+	</div>
+	<div class="card">
+		<span>默认联系方式：（买家拍下后会看到这里的内容）</span>
+		<input id="contact" type="text" placeholder="请输入您的默认联系方式" maxlength="60">
+	</div>
+	<div class="card">
+		<span>个性签名：</span>
+		<textarea id="signature" type="text" placeholder="请输入您的个性签名" maxlength="100"></textarea>
+	</div>
+	<input id="post" class="card" type="button" value="确&nbsp;&nbsp;&nbsp;定">
+</body>
+<script type="text/javascript" src="//cdn.nanfeng.hejianpeng.cn/js/pengge_tools.js"></script>
+<script type="text/javascript" src="//cdn.nanfeng.hejianpeng.cn/js/img_upload.js"></script>
+<script type="text/javascript" src="//cdn.nanfeng.hejianpeng.cn/js/head.js"></script>
+<script type="text/javascript" src="//cdn.nanfeng.hejianpeng.cn/js/my_settings.js"></script>
+</html>

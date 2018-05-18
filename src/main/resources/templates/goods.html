@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<meta charset="utf-8">
+<title>商品详情&nbsp;-&nbsp;南风共享</title>
+<link rel="stylesheet" href="//cdn.nanfeng.hejianpeng.cn/css/main.css" type="text/css"/>	
+<link rel="stylesheet" href="//cdn.nanfeng.hejianpeng.cn/css/goods.css" type="text/css"/>	
+</head>
+<body>
+	<div id="top" class="main">
+		<svg onclick="pengge.back_close()" viewBox="0 0 1024 1024"><path d="M363.840919 472.978737C336.938714 497.358861 337.301807 537.486138 364.730379 561.486138L673.951902 832.05497C682.818816 839.813519 696.296418 838.915012 704.05497 830.048098 711.813519 821.181184 710.915012 807.703582 702.048098 799.94503L392.826577 529.376198C384.59578 522.174253 384.502227 511.835287 392.492414 504.59418L702.325747 223.807723C711.056111 215.895829 711.719614 202.404616 703.807723 193.674252 695.895829 184.943889 682.404617 184.280386 673.674253 192.192278L363.840919 472.978737Z"></path></svg>
+商品详情
+	</div>
+	<div id="title" class="main"></div>
+	<div class="main pp">￥
+		<b id="price"></b>
+		<span id="page_views">浏览</span>
+	</div>
+	<div id="picture" class="main"></div>
+	<div id="content" class="main"></div>
+	<div id="promulgator" class="main">
+		<div class="card">
+			<div id="promulgator_info"></div>
+			<table border="0">
+				<tbody>
+					<tr id="transaction"></tr>
+					<tr>
+						<td>在售宝贝</td>
+						<td>累计交易</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="main message_main">留言（<b id="messages">0</b>）<br>
+		<span id="my_portrait" style="display: none" class="portrait"></span>
+		<div id="message_login">
+			<a href="/sign_in">登录</a>后可发表留言。
+		</div>
+		<div id="layer">
+			<div class="triangle"></div>
+			<input id="write_message" data-uid="" data-name="" type="text" placeholder="想说点什么">
+			<input id="send_message" type="button" value="发送">
+		</div>
+		<div id="message">
+			<div id="load_message">正在加载……</div>
+		</div>
+	</div>
+	<div id="bottom">
+		<div id="favorite">
+			<svg viewBox="0 0 1024 1024">
+				<path fill="#333" d="M902.211 410.358a31.766 31.766 0 0 0-25.644-21.62L644.34 354.994 540.485 144.561a31.765 31.765 0 0 0-56.971 0L379.659 354.995l-232.227 33.744a31.768 31.768 0 0 0-17.606 54.183l168.042 163.8-39.669 231.288a31.765 31.765 0 0 0 46.091 33.487L512 762.298l207.71 109.199c6.915 3.65 22.854 4.496 33.454-2.418 10.086-6.579 14.681-19.151 12.637-31.069l-39.669-231.288 168.041-163.8a31.765 31.765 0 0 0 8.038-32.564zM669.827 572.885a31.766 31.766 0 0 0-9.136 28.117l31.611 184.31-165.521-87.02a31.746 31.746 0 0 0-14.782-3.648 31.755 31.755 0 0 0-14.782 3.648l-165.521 87.02 31.611-184.31a31.766 31.766 0 0 0-9.135-28.117l-133.91-130.53 185.058-26.89a31.765 31.765 0 0 0 23.918-17.377L512 230.396l82.761 167.691a31.765 31.765 0 0 0 23.917 17.377l185.059 26.89-133.91 130.531z" /></svg><span>收藏</span>
+		</div>
+		<input id="buy" type="button" value="立刻购买">
+	</div>
+<div id="buy_now">
+	<div id="buy_now_layer" onClick="this.parentNode.style.display='none'"></div>
+	<div id="buy_now_text"></div>
+</div>
+</body>
+<script type="text/javascript" src="//cdn.nanfeng.hejianpeng.cn/js/pengge_tools.js"></script>
+<script type="text/javascript" src="//cdn.nanfeng.hejianpeng.cn/js/goods.js"></script>
+</html>
