@@ -45,7 +45,7 @@ function get_goods(data) {
             }
             out += '</div>';
 			}
-            out +=  '<p>' + pengge.nanfenggx.font_len(data_arr[j]["content"].replace(/<br>/g, " "),content_len) + '</p><span><h style="background-image:url(http://pic.zdnfbbs.cn/' + data_arr[j]["head_pic"] + ')"></h><h3>' + pengge.nanfenggx.font_len(data_arr[j]["nick_name"],16) + '</h3><h4>' + (data_arr[j]["school"] || "中山大学南方学院") + '</h4></span><h5>' + ((data_arr[j]["is_sell_out"] === 0) ? ((isWantBy===1)?"正在销售":"正渴望着"): "已下架") + '</h5><h6>' + pengge.get_time(data_arr[j]["release_time"] / 1000)  + '</h6></a>';
+            out += '<p>' + pengge.nanfenggx.font_len(data_arr[j]["content"].replace(/<br>/g, " "), content_len) + '</p><span><h style="background-image:url(http://pic.zdnfbbs.cn/' + data_arr[j]["head_pic"] + ')"></h><h3>' + pengge.nanfenggx.font_len(data_arr[j]["nick_name"], 16) + '</h3><h4>' + (data_arr[j]["school"] || "沈阳航空航天大学") + '</h4></span><h5>' + ((data_arr[j]["is_sell_out"] === 0) ? ((isWantBy === 1) ? "正在销售" : "正渴望着") : "已下架") + '</h5><h6>' + pengge.get_time(data_arr[j]["release_time"] / 1000) + '</h6></a>';
         }
         hgoods.innerHTML += out;
         if (j < 10) {
@@ -134,7 +134,7 @@ function choose(a,ss) {
 			hgoods.innerHTML = '<div class="card goods" id="loading">'+((wd==="")?"请输入关键词搜索":"正在加载……")+'</div>';
 if(wd===""){return;}
 	   window.history.pushState({} , 0 , location.pathname + "?type=" + isWantBy + "&wd=" + encodeURI(wd)+ "&");
-	doc.title="搜索 "+pengge.nanfenggx.font_len(wd,20)+" - 南风共享";
+        doc.title = "搜索 " + pengge.nanfenggx.font_len(wd, 20) + " - 沈航共享";
 	get_goods();
 	}
 	

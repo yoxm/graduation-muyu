@@ -22,7 +22,7 @@ doc.getElementById("upload").onchange = function() {
     z.dataset.id = pic_len;
     b.style.left = (pic_len * 25 + 4) + "vw";
     z.style.left = (pic_len * 25 + 4) + "vw";
-    b.src = "http://cdn.nanfeng.hejianpeng.cn/images/loading.gif";
+    b.src = "/images/loading.gif";
     dom_arr[2].appendChild(b);
     dom_arr[2].appendChild(z);
     var a = new FileReader();
@@ -39,8 +39,9 @@ doc.getElementById("upload").onchange = function() {
             o.nodeValue = g;
             var i = doc.createAttribute("height");
             i.nodeValue = m;
-            k.setAttributeNode(o);
+            k.setAttributeNode(o)
             k.setAttributeNode(i);
+            ;
             k.getContext("2d").drawImage(n, 0, 0, g, m);
             var f = k.toDataURL("image/jpg", 0.3);
             b.src = ((f.length > e.length) ? e: f)

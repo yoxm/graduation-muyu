@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class frontNoticeController {
 
-    private String content = "欢迎来到南风~~~~~~";
+    private String content = "欢迎来到沈航二手交易平台~~";
 
     @RequestMapping("/set")
     public String set(String content){

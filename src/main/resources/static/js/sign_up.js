@@ -60,7 +60,7 @@ hpost.onclick = function() {
         post_data += "&nickName=" + pengge.html_encode(dom3.value);
     }
 	this.disabled = true;
-    pengge.post("/regist", post_data + "&signature=我爱南风、我爱分享&headPic=Fo68xdhE-LcKvE_l9c2Gs1hhpbos",
+    pengge.post("/regist", post_data + "&signature=我爱沈航、我爱分享&headPic=Fo68xdhE-LcKvE_l9c2Gs1hhpbos",
     function(data) {
         if (data === "success") {
  pengge.post("/login", "tel=" + pengge.html_encode(dom1.value)+"&passwd=" + pengge.html_encode(dom2.value),

@@ -34,8 +34,12 @@ function chare_type(type, q) {
 
 window.onload = function() {
  add_ad();
-	
-	var j=new XMLHttpRequest();j.open("GET","http://cdn.nanfeng.hejianpeng.cn/images/home_ui");j.setRequestHeader("Content-type","application/x-www-form-urlencoded");j.onreadystatechange=function(){if(j.readyState===4&&(j.status===200||j.status===304)){
+
+    var j = new XMLHttpRequest();
+    j.open("GET", "/images/home_ui");
+    j.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    j.onreadystatechange = function () {
+        if (j.readyState === 4 && (j.status === 200 || j.status === 304)) {
 	var svg_arr = j.responseText.split("|"),
         svg_dom = doc.getElementsByName("svg");
         for (var i = 0; i < svg_arr.length; i++) {

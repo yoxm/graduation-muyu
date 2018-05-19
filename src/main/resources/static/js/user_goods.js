@@ -1,6 +1,6 @@
 "use strict";
 z = true;
-var fz_data = [["favourite", ["我的收藏"], "/private/favorite/get", true, "/private/favorite/delete", "删除", "我收藏的"], ["release", ["在架宝贝", "下架宝贝"], "/private/commodity/my_release", true, "/private/commodity/close", "下架", "我发布的"], ["buy", ["我拍下的"], "/private/order/get-by-uid", false, "", "", "我拍下的"]],
+var fz_data = [["favourite", ["我的购物车"], "/private/favorite/get", true, "/private/favorite/delete", "删除", "我收藏的"], ["release", ["在架宝贝", "下架宝贝"], "/private/commodity/my_release", true, "/private/commodity/close", "下架", "我发布的"], ["buy", ["我拍下的"], "/private/order/get-by-uid", false, "", "", "我拍下的"]],
 fz_num = 0,
 ty = pengge.url.data("type");
 
@@ -16,7 +16,7 @@ for (; fz_num < 3;) {
 if (fz_num >= 3) {
     location.href = "/";
 } else {
-    doc.title = fz_data[fz_num][6] + " - 南风共享"
+    doc.title = fz_data[fz_num][6] + " - 沈航共享"
 }
 
 head(fz_data[fz_num][1]);
@@ -29,7 +29,7 @@ function get_goods() {
 
         for (var j = 0; j < data_arr.length; j++) {
             out += '<a name="card" class="card" target="view_window" href="goods?gid=' + data_arr[j]["gid"] + '&"><h1>' + pengge.nanfenggx.font_len(data_arr[j]["goods_name"], 18) + '</h1><h2>' + pengge.get_time(data_arr[j]["release_time"] / 1000) + '</h2>';
-            if (data_arr[j]["picture"].toString().length > 5) {
+            if (data_arr[j]["picture"] && data_arr[j]["picture"].toString().length > 5) {
                 data_arr[j]["picture"] = JSON.parse(data_arr[j]["picture"]);
                 out += '<div><img onload="img_onload(this)" src="http://pic.zdnfbbs.cn/' + data_arr[j]["picture"][0] + '" alt=""/></div><span style="float: left;">';
             } else {

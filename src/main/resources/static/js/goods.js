@@ -18,7 +18,7 @@ pengge.post("/public/commodity/get-with-info-by-gid", "gid=" + gid,function(data
 
     var data_arr = JSON.parse(data),hpic= doc.getElementById("picture");
 	is_want_by=(data_arr['is_want_by']!==0)?true:false;
-    doc.title = pengge.nanfenggx.font_len(data_arr["goods_name"], 30) + " - 南风共享";
+    doc.title = pengge.nanfenggx.font_len(data_arr["goods_name"], 30) + " - 沈航共享";
 	    if (uid !== null) {
         doc.getElementById("layer").style.display = "block";
         doc.getElementById("message_login").style.display = "none";
@@ -37,7 +37,7 @@ pengge.post("/public/commodity/get-with-info-by-gid", "gid=" + gid,function(data
     doc.getElementById("page_views").innerHTML += data_arr["page_views"];
     doc.getElementById("content").innerHTML = data_arr["content"];
     doc.getElementById("buy_now_text").innerHTML = ((uid === null) ? "<span><a href='/sign_in'>登录</a>后才能"+(is_want_by?"购买":"发布")+"商品哦！</span>": ("<span><p>"+(is_want_by?"卖":"买")+"家联系方式:</p>" + data_arr["contact"] + "</span>"));
-    doc.getElementById("promulgator_info").innerHTML = '<span class="portrait" style="background-image: url(http://pic.zdnfbbs.cn/' + data_arr["head_pic"] + ')"></span><b>' + pengge.nanfenggx.font_len(data_arr["nick_name"],20)+ '</b><p>' + (data_arr["school"] || "中山大学南方学院") + '</p>';
+    doc.getElementById("promulgator_info").innerHTML = '<span class="portrait" style="background-image: url(http://pic.zdnfbbs.cn/' + data_arr["head_pic"] + ')"></span><b>' + pengge.nanfenggx.font_len(data_arr["nick_name"], 20) + '</b><p>' + (data_arr["school"] || "沈阳航空航天大学") + '</p>';
     doc.getElementById("write_message").dataset.uid = data_arr["uid"];
     doc.getElementById("transaction").innerHTML = '<th>' + data_arr["selling"] + '</th><th>' + data_arr["release_num"] + '</th>';
     get_message_num();

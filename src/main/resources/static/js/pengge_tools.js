@@ -1,5 +1,5 @@
 "use strict";
-var doname = "http://localhost:8081",
+var doname = "http://localhost:8080",
     Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
 var flag = true;
 for (var v = 0; v < Agents.length; v++) {

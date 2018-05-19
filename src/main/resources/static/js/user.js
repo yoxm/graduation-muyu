@@ -6,10 +6,15 @@ uid=pengge.cookie.get("uid");
 if (uid === null) {
     location.href = "/user_guest";
 } else {
-    doc.getElementById("main").innerHTML = '<span style="background-image:url(http://pic.zdnfbbs.cn/' + headPic + ')"></span><h1>' + pengge.nanfenggx.font_len((nickName || "南风共享用户"),20) + '</h1><h2>' + (pengge.cookie.get("school") || "中山大学南方学院") + '</h2>';
+    doc.getElementById("main").innerHTML = '<span style="background-image:url(http://pic.zdnfbbs.cn/' + headPic + ')"></span><h1>' + pengge.nanfenggx.font_len((nickName || "沈航共享用户"), 20) + '</h1><h2>' + (pengge.cookie.get("school") || "沈阳航空航天大学") + '</h2>';
 
-				
-	var j1=new XMLHttpRequest();j1.open("GET","http://cdn.nanfeng.hejianpeng.cn/images/user_ui");j1.setRequestHeader("Content-type","application/x-www-form-urlencoded");j1.send("");j1.onreadystatechange=function(){if(j1.readyState===4&&(j1.status===200||j1.status===304)){
+
+    var j1 = new XMLHttpRequest();
+    j1.open("GET", "http:/images/user_ui");
+    j1.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    j1.send("");
+    j1.onreadystatechange = function () {
+        if (j1.readyState === 4 && (j1.status === 200 || j1.status === 304)) {
 
         var ui_data = j1.responseText.split("|"),
         user_index = [{
@@ -18,7 +23,7 @@ if (uid === null) {
         },
         {
             "my_settings": "个人设置",
-            "goods_list?type=my_favourite&": "我收藏的",
+            "goods_list?type=my_favourite&": "我的购物车",
             "my_message": "我的消息"
         },
         {

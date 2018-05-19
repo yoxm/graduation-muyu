@@ -1,3 +1,3 @@
 function getDomain () {
-	return "http://nanfeng.heartqiu.cn";
+    return "localhost:8080";
 }
